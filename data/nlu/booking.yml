@@ -1,0 +1,19 @@
+version: "2.0"
+
+nlu:
+- intent: request_hotel
+  example: |
+    - 查询一下[汉庭酒店](hotel_name)有没有[大床房](room_type)
+    - [明天](date_time)[如家](hotel_name)有[标准间](room_type)吗
+    - 查一下[附件](address)的[五星级酒店](hotel_name)
+    - [这家酒店](hotel_name)有叫醒服务吗
+    - [这家酒店](hotel_name)有早餐吗
+    - [南京路](address)的[桔子水晶](hotel_name)还有[高级大床房](room_type)吗
+    - 预定一下[那五马路](address)[7天](hotel_name)的标间
+    - [北京南站](address)附近[五星级酒店]的美团套餐
+    - [7天](hotel_name)怎么样
+- intent: request_restaurant
+  example: |
+    - [明天](date_time)去[杨妈妈粥店](restaurant_name)喝粥
+    - 推荐一下[附近](address)的[烧烤店](restaurant_name)
+    - [昨天](date_time)我们[5](person_number)在[苏州路](address)吃的[四川火锅](dish)

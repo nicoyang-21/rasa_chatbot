@@ -15,6 +15,7 @@ intents:
 - inform
 - whoareyou
 - inform_business
+- phone_number
 entities:
 - date_time
 - address
@@ -22,6 +23,9 @@ entities:
 - person_number
 - room_type
 - business
+- hotel_name
+- restaurant_name
+- dish
 slots:
   date_time:
     type: unfeaturized
@@ -44,6 +48,22 @@ slots:
       auto_fill: false
       influence_conversation: false
   business:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+  phone_number:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+  hotel_name:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+  restaurant_name:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+  dish:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
@@ -77,6 +97,8 @@ responses:
   - text: 您好，暂不支持{business}业务，谢谢！
   utter_wrong_room_type:
   - text: 您好，暂不支持{room_type}类型房间，谢谢！
+  ask_phone_number:
+  - text: 请提供您的手机号？
 actions:
 - utter_answer_greet
 - utter_answer_goodbye
@@ -90,6 +112,7 @@ actions:
 - utter_ask_business
 - hotel_form
 - restaurant_form
+- ask_phone_number
 forms:
   hotel_form: {}
   restaurant_form: {}
