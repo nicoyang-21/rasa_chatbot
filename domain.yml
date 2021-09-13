@@ -1,0 +1,96 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- thanks
+- request_hotel
+- request_restaurant
+- chitchat
+- stop
+- inform
+- whoareyou
+- inform_business
+entities:
+- date_time
+- address
+- number
+- person_number
+- room_type
+- business
+slots:
+  date_time:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+  address:
+    type: unfeaturized
+      auto_fill: false
+      influence_conversation: false
+  number:
+    type: unfeaturized
+      auto_fill: false
+      influence_conversation: false
+  person_number:
+    type: unfeaturized
+      auto_fill: false
+      influence_conversation: false
+  room_type:
+    type: unfeaturized
+      auto_fill: false
+      influence_conversation: false
+  business:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+responses:
+  utter_answer_greet:
+  - text: 您好，很高兴遇见您！
+  - text: 祝您生活愉快！
+  - text: 非常高兴能够帮到您！
+  utter_answer_goodbye:
+  - text: 再见！
+  - text: 期待与您再会！
+  - text: 再见，祝您生活愉快！
+  utter_answer_thanks:
+  - text: 您客气了，这是我应该做的！
+  - text: 您客气了！
+  utter_answer_stop:
+  - text: 你还有什么问题？
+  utter_answer_whoareyou:
+  - text: 我是您的助手，小艾。
+  utter_ask_datetime:
+  - text: 哪一天呢？
+  utter_ask_address:
+  - text: 什么位置呢？
+  utter_ask_people_number:
+  - text: 您一共几个人？
+  utter_ask_room_type:
+  - text: 您想住什么样的房间？
+  utter_ask_business:
+  - text: 您想咨询什么业务？
+  utter_wrong_business:
+  - text: 您好，暂不支持{business}业务，谢谢！
+  utter_wrong_room_type:
+  - text: 您好，暂不支持{room_type}类型房间，谢谢！
+actions:
+- utter_answer_greet
+- utter_answer_goodbye
+- utter_answer_thanks
+- utter_answer_stop
+- utter_answer_whoareyou
+- utter_ask_datetime
+- utter_ask_address
+- utter_ask_people_number
+- utter_ask_room_type
+- utter_ask_business
+- hotel_form
+- restaurant_form
+forms:
+  hotel_form: {}
+  restaurant_form: {}
+e2e_actions: []
