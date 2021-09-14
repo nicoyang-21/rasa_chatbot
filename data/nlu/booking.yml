@@ -30,4 +30,83 @@ nlu:
     - [北京](address)
     - 我想知道[香格里拉酒店](hotel_name)
     - [如家](hotel_name)在哪里
-    - [10086](number)是移动的客服电话吗
+    - [10086](phone_number)是移动的客服电话吗
+    - 我的手机号是[13345698854](phone_number)
+- intent: inform_business
+  example: |
+    - [开房信息](business)
+    - [开房信息](business)
+    - [发票信息](business)
+    - [就餐信息](business)
+    - [身份信息](business)
+    - [手机号码](business)
+    - 查[开房信息](business)
+    - 查一查[就餐信息](business)
+    - 提供[发票信息](business)
+    - 查一下[犯罪记录](business)
+    - 看一下[就餐消息](business)
+    - 了解一下[北京饭店](restaurant_name)的[餐饮信息](business)
+    - 想知道[桔子水晶](hotel_name)的[床位信息](business)
+    - 核实一下[身份信息](business)
+- synonym: 就餐信息
+  example: |
+    - 吃饭信息
+    - 吃饭记录
+    - 就餐
+    - 吃饭
+    - 吃饭情况
+    - 就餐情况
+    - 就餐记录
+- synonym: 开房信息
+  example: |
+    - 住宿信息
+    - 开房记录
+    - 住宿记录
+    - 房间记录
+    - 房间使用情况
+- synonym: 发票信息
+  example: |
+    - 发票
+    - 发票抬头
+    - 发票开户行
+    - 电子发票
+    - 纸质发票
+- synonym: 犯罪记录
+  example: |
+    - 犯罪
+    - 违法信息
+    - 犯罪信息
+    - 不良记录
+    - 不良信息
+    - 违法犯罪
+- synonym: 身份信息
+  example: |
+    - 身份证
+    - 身份证号
+    - 身份证件
+    - 身份证号码
+    - 身份证明
+    - 身份
+- synonym: 手机号码
+  example: |
+    - 手机
+    - 手机号
+    - 电话
+    - 电话号码
+    - 电话号
+    - 联系方式
+- synonym: 床位信息
+  example: |
+    - 房间信息
+    - 房间级别
+    - 套间信息
+- regex: number
+  examples: |
+    - ([1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx])|([1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}[0-9Xx])
+- regex: phone_number
+  examples: |
+    - ((\d{3,4}-)?\d{7,8})|(((\+86)|(86))?(1)\d{10})
+
+
+
+

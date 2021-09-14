@@ -15,11 +15,11 @@ intents:
 - inform
 - whoareyou
 - inform_business
-- phone_number
+- number
 entities:
 - date_time
 - address
-- number
+- phone_number
 - person_number
 - room_type
 - business
@@ -97,7 +97,7 @@ responses:
   - text: 您好，暂不支持{business}业务，谢谢！
   utter_wrong_room_type:
   - text: 您好，暂不支持{room_type}类型房间，谢谢！
-  ask_phone_number:
+  ask_number:
   - text: 请提供您的手机号？
 actions:
 - utter_answer_greet
