@@ -1,0 +1,35 @@
+version: "2.0"
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+- stroy: say who are you
+  steps:
+  - intent: whoareyou
+  - action: utter_answer_whoareyou
+- story: say affirm
+  steps:
+  - intent: affirm
+  - action: utter_answer_affirm
+- story: say chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+- story: say deny
+  steps:
+  - intent: deny
+  - action: utter_answer_deny
+- story: say stop
+  steps:
+  - intent: stop
+  - action: utter_answer_stop
+- story: say chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_answer_goodbye
+

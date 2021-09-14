@@ -5,10 +5,12 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- affirm
+- deny
 - greet
 - goodbye
 - thanks
-- request_hotel
+- request_hotel_service
 - request_restaurant
 - chitchat
 - stop
@@ -16,6 +18,8 @@ intents:
 - whoareyou
 - inform_business
 - number
+- booking_hotel
+- check_hotle
 entities:
 - date_time
 - address
@@ -68,6 +72,13 @@ slots:
     auto_fill: false
     influence_conversation: false
 responses:
+  utter_answer_affirm:
+  - text: 嗯嗯，好的！
+  - text: 嗯嗯，很开心能够帮您解决问题~
+  - text: 嗯嗯，还需要什么我能够帮助您的呢？
+  utter_answer_deny:
+  - text: 主人，您不开心吗？不要离开我哦
+  - text: 怎么了，主人？
   utter_answer_greet:
   - text: 您好，很高兴遇见您！
   - text: 祝您生活愉快！
@@ -99,7 +110,12 @@ responses:
   - text: 您好，暂不支持{room_type}类型房间，谢谢！
   ask_number:
   - text: 请提供您的手机号？
+  utter_chitchat:
+  - text: 呃呃呃呃呃
+  - text: 您这是在尬聊吗？
 actions:
+- utter_answer_affirm
+- utter_answer_deny
 - utter_answer_greet
 - utter_answer_goodbye
 - utter_answer_thanks
@@ -111,6 +127,7 @@ actions:
 - utter_ask_room_type
 - utter_ask_business
 - hotel_form
+- utter_chitchat
 - restaurant_form
 - ask_phone_number
 forms:
