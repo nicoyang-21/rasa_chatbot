@@ -29,7 +29,7 @@ entities:
 - business
 - hotel_name
 - restaurant_name
-- dish
+- cuisine
 - service
 slots:
   date_time:
@@ -68,7 +68,7 @@ slots:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
-  dish:
+  cuisine:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
@@ -113,13 +113,15 @@ responses:
   - text: 您好，暂不支持{business}业务，谢谢！
   utter_wrong_room_type:
   - text: 您好，暂不支持{room_type}类型房间，谢谢！
-  ask_number:
+  utter_ask_number:
   - text: 请提供您的手机号？
   utter_chitchat:
   - text: 呃呃呃呃呃
   - text: 您这是在尬聊吗？
   utter_request_hotel_service:
   - text: 小主，这个是有的。
+  utter_ok:
+  - text: 小主，已经预定完毕。
 actions:
 - utter_answer_affirm
 - utter_answer_deny
@@ -136,8 +138,9 @@ actions:
 - hotel_form
 - utter_chitchat
 - restaurant_form
-- ask_phone_number
+- utter_ask_number
 - utter_request_hotel_service
+- utter_ok
 forms:
   hotel_form: {}
   restaurant_form: {}

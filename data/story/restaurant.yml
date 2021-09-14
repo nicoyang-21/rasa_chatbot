@@ -1,0 +1,15 @@
+version: "2.0"
+stories:
+- story: simple unhappy path
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: stop
+  - action: utter_answer_stop
+  - intent: request_restaurant
+    entities:
+    - entity_name: date_time
+    - entity_name: restaurant_name
+    - entity_name: address
+    - entity_name: person_number
+  - action: utter_ok
