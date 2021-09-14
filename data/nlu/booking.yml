@@ -17,3 +17,17 @@ nlu:
     - [明天](date_time)去[杨妈妈粥店](restaurant_name)喝粥
     - 推荐一下[附近](address)的[烧烤店](restaurant_name)
     - [昨天](date_time)我们[5](person_number)在[苏州路](address)吃的[四川火锅](dish)
+    - 我想去[北京饭店](restaurant_name)吃[大米饭](dish)
+    - [昌平区](address)的[西北菜](dish)怎么样，[我俩](person_number)计划[明天中午](date_time)去
+    - 听说[回龙观](address)的[李连贵](restaurant_name)挺好吃的
+- intent: inform
+  example: |
+    - 你知道[全聚德](restaurant_name)在哪里吗
+    - [明天](date_time)
+    - [后天](date_time)
+    - [今天](date_time)
+    - 帮我查一下[今天](date_time)的
+    - [北京](address)
+    - 我想知道[香格里拉酒店](hotel_name)
+    - [如家](hotel_name)在哪里
+    - [10086](number)是移动的客服电话吗
