@@ -1,8 +1,66 @@
 version: "2.0"
 stories:
-- story: happy path
+- story: happy path + chitchat
   steps:
   - intent: greet
   - action: utter_answer_greet
-  - intent: request_hotel
-  - action:
+  - intent: check_hotle
+    entities:
+    - address: 天安门
+    - hotel_name: null
+    - room_type: null
+  - action:  hotel_form
+  - active_loop: hotel_form
+  - slot_was_set:
+    - address: 天安门
+  - slot_was_set:
+    - hotel_name: null
+  - slot_was_set:
+    - room_type: null
+  - slot_was_set:
+    - requested_slot: hotel_name
+  - slot_was_set:
+    - requested_slot: room_type
+  - intent: request_hotel_service
+  - action: utter_request_hotel_service
+  - intent: booking_hotel
+    entities:
+    - hotel_name: 如家
+    - address: null
+    - room_type: null
+    - person_number: null
+    - date_time: null
+    - phone_number: null
+  - action: hotel_form
+  - active_loop: hotel_form
+  - slot_was_set:
+    - hotel_name: 如家
+  - slot_was_set:
+    - address: null
+  - slot_was_set:
+    - room_type: null
+  - slot_was_set:
+    - person_number: null
+  - slot_was_set:
+    - date_time: null
+  - slot_was_set:
+    - phone_number: null
+  - slot_was_set:
+    - requested_slot: address
+  - slot_was_set:
+    - requested_slot: room_type
+  - slot_was_set:
+    - requested_slot: person_number
+  - slot_was_set:
+    - requested_slot: date_time
+  - slot_was_set:
+    - requested_slot: phone_number
+  - intent: thanks
+  - action: utter_answer_thanks
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: utter_chitchat
+  - intent: goodbye
+  - action: utter_answer_goodbye
+
+

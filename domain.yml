@@ -30,6 +30,7 @@ entities:
 - hotel_name
 - restaurant_name
 - dish
+- service
 slots:
   date_time:
     type: unfeaturized
@@ -68,6 +69,10 @@ slots:
     auto_fill: false
     influence_conversation: false
   dish:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+  service:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
@@ -113,6 +118,8 @@ responses:
   utter_chitchat:
   - text: 呃呃呃呃呃
   - text: 您这是在尬聊吗？
+  utter_request_hotel_service:
+  - text: 小主，这个是有的。
 actions:
 - utter_answer_affirm
 - utter_answer_deny
@@ -130,6 +137,7 @@ actions:
 - utter_chitchat
 - restaurant_form
 - ask_phone_number
+- utter_request_hotel_service
 forms:
   hotel_form: {}
   restaurant_form: {}
