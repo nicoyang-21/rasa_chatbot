@@ -38,20 +38,20 @@ slots:
     influence_conversation: false
   address:
     type: unfeaturized
-      auto_fill: false
-      influence_conversation: false
+    auto_fill: false
+    influence_conversation: false
   number:
     type: unfeaturized
-      auto_fill: false
-      influence_conversation: false
+    auto_fill: false
+    influence_conversation: false
   person_number:
     type: unfeaturized
-      auto_fill: false
-      influence_conversation: false
+    auto_fill: false
+    influence_conversation: false
   room_type:
     type: unfeaturized
-      auto_fill: false
-      influence_conversation: false
+    auto_fill: false
+    influence_conversation: false
   business:
     type: unfeaturized
     auto_fill: false
