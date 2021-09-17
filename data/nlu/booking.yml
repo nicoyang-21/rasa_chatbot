@@ -2,33 +2,37 @@ version: "2.0"
 
 nlu:
 - intent: request_hotel_service
-  example: |
+  examples: |
     - [这家酒店](hotel_name)有[叫醒服务](service)吗
     - [这家酒店](hotel_name)有[早餐](service)吗
     - [全季酒店](hotel_name)可以[洗衣服](service)吗
     - [香格里拉](hotel_name)可以[健身](service)吗
-    — 可以[游泳](service)吗
+    - 可以[游泳](service)吗
+
 - intent: check_hotle
-  example:
+  examples: |
     - [南京路](address)的[桔子水晶](hotel_name)还有[高级大床房](room_type)吗
     - 查询一下[汉庭酒店](hotel_name)有没有[大床房](room_type)
     - [明天](date_time)[如家](hotel_name)有[标准间](room_type)吗
     - [鸿运](hotel_name)还有[总统套](room_type)吗
 - intent: booking_hotel
+  examples: |
     - 预定一下[那五马路](address)[7天](hotel_name)的标间
     - 定[北京站](address)的[全季](hotel_name)的[大床房](room_type)
     - 去[7天](hotel_name)定个房间
     - 给[2](person_number)个人定个[双人标间](room_type)
+
 - intent: request_restaurant
-  example: |
+  examples: |
     - [明天](date_time)去[杨妈妈粥店](restaurant_name)喝粥
     - 推荐一下[附近](address)的[烧烤店](restaurant_name)
     - [昨天](date_time)我们[5](person_number)在[苏州路](address)吃的[四川火锅](cuisine)
     - 我想去[北京饭店](restaurant_name)吃[大米饭](cuisine)
     - [昌平区](address)的[西北菜](cuisine)怎么样，[我俩](person_number)计划[明天中午](date_time)去
     - 听说[回龙观](address)的[李连贵](restaurant_name)挺好吃的
+
 - intent: inform
-  example: |
+  examples: |
     - 你知道[全聚德](restaurant_name)在哪里吗
     - [明天](date_time)
     - [后天](date_time)
@@ -39,8 +43,9 @@ nlu:
     - [如家](hotel_name)在哪里
     - [10086](phone_number)是移动的客服电话吗
     - 我的手机号是[13345698854](phone_number)
+
 - intent: inform_business
-  example: |
+  examples: |
     - [开房信息](business)
     - [开房信息](business)
     - [发票信息](business)
@@ -55,8 +60,9 @@ nlu:
     - 了解一下[北京饭店](restaurant_name)的[餐饮信息](business)
     - 想知道[桔子水晶](hotel_name)的[床位信息](business)
     - 核实一下[身份信息](business)
+
 - synonym: 就餐信息
-  example: |
+  examples: |
     - 吃饭信息
     - 吃饭记录
     - 就餐
@@ -64,52 +70,60 @@ nlu:
     - 吃饭情况
     - 就餐情况
     - 就餐记录
+
 - synonym: 开房信息
-  example: |
+  examples: |
     - 住宿信息
     - 开房记录
     - 住宿记录
     - 房间记录
     - 房间使用情况
+
 - synonym: 发票信息
-  example: |
+  examples: |
     - 发票
     - 发票抬头
     - 发票开户行
     - 电子发票
     - 纸质发票
+
 - synonym: 犯罪记录
-  example: |
+  examples: |
     - 犯罪
     - 违法信息
     - 犯罪信息
     - 不良记录
     - 不良信息
     - 违法犯罪
+
 - synonym: 身份信息
-  example: |
+  examples: |
     - 身份证
     - 身份证号
     - 身份证件
     - 身份证号码
     - 身份证明
     - 身份
+
 - synonym: 手机号码
-  example: |
+  examples: |
     - 手机
     - 手机号
     - 电话
     - 电话号码
     - 电话号
     - 联系方式
+
 - synonym: 床位信息
-  example: |
+  examples: |
     - 房间信息
     - 房间级别
     - 套间信息
+
 - regex: number
   examples: |
     - ([1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx])|([1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}[0-9Xx])
+
 - regex: phone_number
   examples: |
     - ((\d{3,4}-)?\d{7,8})|(((\+86)|(86))?(1)\d{10})

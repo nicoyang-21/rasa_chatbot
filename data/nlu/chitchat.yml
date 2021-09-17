@@ -87,7 +87,7 @@ nlu:
     - 这么优秀
     - 谢了
 - intent: chitchat
-  example: |
+  examples: |
     - 你是不是傻
     - 你喜欢靓仔靓女吗
     - 能跟我说说你的男朋友吗
@@ -122,7 +122,7 @@ nlu:
     - 你觉得华为手机怎么样
     - 你知不知道新型冠形病毒
 - intent: stop
-  example: |
+  examples: |
     - 不行啊
     - 这是什么啊
     - 你还得没努力啊
@@ -133,7 +133,7 @@ nlu:
     - 不想再看见你
     - 你是什么东西
 - intent: whoareyou
-  example: |
+  examples: |
     - 你是谁啊
     - 你从哪里来啊
     - 你是
