@@ -21,6 +21,7 @@ intents:
 - booking_hotel
 - check_hotle
 - bot_challenge
+- chatchit
 entities:
 - date_time
 - address
@@ -116,15 +117,18 @@ responses:
   - text: 您好，暂不支持{room_type}类型房间，谢谢！
   utter_ask_number:
   - text: 请提供您的手机号？
-  utter_chitchat:
-  - text: 呃呃呃呃呃
-  - text: 您这是在尬聊吗？
   utter_request_hotel_service:
   - text: 小主，这个是有的。
   utter_ok:
   - text: 小主，已经预定完毕。
   utter_bot_challenge:
   - text: 我是机器人小艾，我还是个小学生，我正在学习，小主不要生气啊❤❤❤！
+  utter_chitchat/fanny:
+  - text: 小主，你说的话太有哲理了，我的好好学习啊，要不都没办法跟你聊天了。
+  - text: 你好可爱啊，可爱的我都不知道怎么说了呢。
+  utter_chitchat/askquestion:
+  - text: 哎呀，小艾脑子乱了，你太有哲理了。
+  - text: 我不知道啊。
 actions:
 - utter_answer_affirm
 - utter_answer_deny
@@ -139,11 +143,12 @@ actions:
 - utter_ask_room_type
 - utter_ask_business
 - hotel_form
-- utter_chitchat
 - restaurant_form
 - utter_ask_number
 - utter_request_hotel_service
 - utter_ok
+- utter_chitchat/fanny
+- utter_chitchat/askquestion
 forms:
   hotel_form: {}
   restaurant_form: {}

@@ -21,6 +21,7 @@ pipeline:
    - name: ResponseSelector
      epochs: 100
      constrain_similarities: true
+     retrieval_intent: chitchat
    - name: FallbackClassifier
      threshold: 0.3
      ambiguity_threshold: 0.1

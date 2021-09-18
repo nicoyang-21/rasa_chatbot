@@ -5,9 +5,14 @@ rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
-  - action: utter_goodbye
+  - action: utter_answer_goodbye
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
-  - action: utter_iamabot
+  - action: utter_bot_challenge
+
+- rule: say utter_chitchat anytime the user say chitcht
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat

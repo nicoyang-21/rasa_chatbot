@@ -59,7 +59,6 @@ stories:
   - action: utter_answer_thanks
   - intent: chitchat
   - action: utter_chitchat
-  - intent: utter_chitchat
   - intent: goodbye
   - action: utter_answer_goodbye
 
