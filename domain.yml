@@ -5,44 +5,35 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- request_hotel
+    use_entities: []
 - affirm
 - deny
 - greet
 - goodbye
 - thanks
-- request_hotel_service
-- request_restaurant
+- ask_hotel_service
 - chitchat
 - stop
 - inform
 - whoareyou
 - inform_business
-- number
-- booking_hotel
-- check_hotle
 - bot_challenge
 - chatchit
 entities:
 - date_time
-- address
 - phone_number
 - person_number
 - room_type
 - business
-- hotel_name
-- restaurant_name
-- cuisine
 - service
+- lastname
 slots:
   date_time:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
-  address:
-    type: unfeaturized
-    auto_fill: false
-    influence_conversation: false
-  number:
+  phone_number:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
@@ -58,23 +49,15 @@ slots:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
-  phone_number:
-    type: unfeaturized
-    auto_fill: false
-    influence_conversation: false
-  hotel_name:
-    type: unfeaturized
-    auto_fill: false
-    influence_conversation: false
-  restaurant_name:
-    type: unfeaturized
-    auto_fill: false
-    influence_conversation: false
-  cuisine:
-    type: unfeaturized
-    auto_fill: false
-    influence_conversation: false
   service:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+  lastname:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+  breakfast:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
@@ -102,34 +85,49 @@ responses:
   utter_answer_whoareyou:
   - text: 我是您的助手，小艾。
   utter_ask_datetime:
-  - text: 哪一天呢？
-  utter_ask_address:
-  - text: 什么位置呢？
-  utter_ask_people_number:
-  - text: 您一共几个人？
+  - text: 请输入具体日期？
+  utter_ask_person_number:
+  - text: 请输入人数。
+  utter_wrong_person_number:
+  - text: 请输入正整数。
   utter_ask_room_type:
-  - text: 您想住什么样的房间？
+  - text: 请输入房间类型？
+  utter_wrong_room_ytpe:
+  - text: 您好，暂不支持{room_type}类型房间，本店支持如下房间类型，请输入你需要的类型，谢谢！
   utter_ask_business:
   - text: 您想咨询什么业务？
   utter_wrong_business:
   - text: 您好，暂不支持{business}业务，谢谢！
-  utter_wrong_room_type:
-  - text: 您好，暂不支持{room_type}类型房间，谢谢！
-  utter_ask_number:
+  utter_ask_phone_number:
   - text: 请提供您的手机号？
-  utter_request_hotel_service:
-  - text: 小主，这个是有的。
+  utter_wrong_phone_number:
+  - text: 请输入正确的手机号。
+  utter_ask_service:
+  - text: 需要什么服务。
   utter_ok:
   - text: 小主，已经预定完毕。
   utter_bot_challenge:
   - text: 我是机器人小艾，我还是个小学生，我正在学习，小主不要生气啊❤❤❤！
+  utter_ask_breakfast:
+  - text: 是否需要早餐。
   utter_chitchat/fanny:
   - text: 小主，你说的话太有哲理了，我的好好学习啊，要不都没办法跟你聊天了。
   - text: 你好可爱啊，可爱的我都不知道怎么说了呢。
   utter_chitchat/askquestion:
   - text: 哎呀，小艾脑子乱了，你太有哲理了。
   - text: 我不知道啊。
+  utter_submit:
+  - text: 太棒了，您的请求正在搜索中。
+  utter_solts_values:
+  - text: 正在使用如下信息搜索您需要的房间：\n
+          - 时间：{date_time}\n
+          - 人数：{person_number}\n
+          - 房间类型：{room_type}\n
+          - 服务：{service}
+          - 早餐：{breakfast}\n
+          - 手机：{phone_number}
 actions:
+- validate_hotel_form
 - utter_answer_affirm
 - utter_answer_deny
 - utter_answer_greet
@@ -138,18 +136,46 @@ actions:
 - utter_answer_stop
 - utter_answer_whoareyou
 - utter_ask_datetime
-- utter_ask_address
-- utter_ask_people_number
+- utter_ask_person_number
+- utter_wrong_person_number
 - utter_ask_room_type
+- utter_wrong_room_ytpe
 - utter_ask_business
-- hotel_form
-- restaurant_form
-- utter_ask_number
-- utter_request_hotel_service
+- utter_wrong_business
+- utter_ask_phone_number
+- utter_wrong_phone_number
+- utter_ask_service
 - utter_ok
+- utter_bot_challenge
+- utter_ask_breakfast
 - utter_chitchat/fanny
 - utter_chitchat/askquestion
 forms:
-  hotel_form: {}
-  restaurant_form: {}
+  hotel_form:  酒店预定信息收集
+    ignored_intents:
+    - chitchat
+    required_slots:
+      date_time:
+      - type: from_entity
+        entity: date_time
+      room_type:
+      - type: from_entity
+        entity: room_type
+      person_number:
+      - type: from_entity
+        entity: person_number
+        intent: [request_hotel, ask_hotel_service, inform_business]
+      service:
+      - type: from_text
+        not_intent: affirm
+      breakfast:
+      - type: from_intent
+        intent: affirm
+        value: true
+      - type: from_intent
+        intent: deny
+        value: false
+      phone_number:
+      - type: from_entity
+        entity: phone_number
 e2e_actions: []
