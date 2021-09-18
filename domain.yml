@@ -20,6 +20,7 @@ intents:
 - number
 - booking_hotel
 - check_hotle
+- bot_challenge
 entities:
 - date_time
 - address
@@ -122,6 +123,8 @@ responses:
   - text: 小主，这个是有的。
   utter_ok:
   - text: 小主，已经预定完毕。
+  utter_bot_challenge:
+  - text: 我是机器人小艾，我还是个小学生，我正在学习，小主不要生气啊❤❤❤！
 actions:
 - utter_answer_affirm
 - utter_answer_deny
