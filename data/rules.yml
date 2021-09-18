@@ -16,3 +16,18 @@ rules:
   steps:
   - intent: chitchat
   - action: utter_chitchat
+
+- rule: active hotel_form
+  steps:
+  - intent: request_hotel
+  - action: hotel_form
+  - active_loop: hotel_form
+
+- rule: submit form
+  condition:
+  - active_loop: hotel_form
+  steps:
+  - action: hotel_form
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_solts_values

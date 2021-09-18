@@ -1,76 +1,36 @@
 version: "2.0"
 
 nlu:
-- intent: request_hotel_service
+- intent: request_hotel
   examples: |
-    - [这家酒店](hotel_name)有[叫醒服务](service)吗
-    - [这家酒店](hotel_name)有[早餐](service)吗
-    - [全季酒店](hotel_name)可以[洗衣服](service)吗
-    - [香格里拉](hotel_name)可以[健身](service)吗
-    - 可以[游泳](service)吗
-
-- intent: check_hotle
+    - 我想预定[大床房](room_type)。
+    - 可以预定房间吗？
+    - 有[9月19日](date_time)的[总统套间](room_type)吗？
+    - 开一间[4](person_number)人[麻将房](room_type)。
+    - 定3间[大床房](room_type)。
+    - 还有[双人标间](room_type)吗？
+    - [总统套间](room_type)。
+    - [大床房](room_type)。
+    - 3间[标间](room_type)
+    - 给[13122331122](phone_number)定间[标准间](room_type)
+    - [15312216688](phone_number)在这预定[总统套](room_type)
+- intent: ask_hotel_service
   examples: |
-    - [南京路](address)的[桔子水晶](hotel_name)还有[高级大床房](room_type)吗
-    - 查询一下[汉庭酒店](hotel_name)有没有[大床房](room_type)
-    - [明天](date_time)[如家](hotel_name)有[标准间](room_type)吗
-    - [鸿运](hotel_name)还有[总统套](room_type)吗
-- intent: booking_hotel
+    - 早上可以提供叫醒服务吗？
+    - 来个按摩。
+    - 打扫一下我的房间。
+    - 可以打扫房间吗？
+    - 可以房间订餐吗？
+    - 房间内订餐。
+    - 健身娱乐。
+    - 游泳。
+    - 有泳池吗？
+    - 有健身房吗？
+- intent: ask_business
   examples: |
-    - 预定一下[那五马路](address)[7天](hotel_name)的标间
-    - 定[北京站](address)的[全季](hotel_name)的[大床房](room_type)
-    - 去[7天](hotel_name)定个房间
-    - 给[2](person_number)个人定个[双人标间](room_type)
-
-- intent: request_restaurant
-  examples: |
-    - [明天](date_time)去[杨妈妈粥店](restaurant_name)喝粥
-    - 推荐一下[附近](address)的[烧烤店](restaurant_name)
-    - [昨天](date_time)我们[5](person_number)在[苏州路](address)吃的[四川火锅](cuisine)
-    - 我想去[北京饭店](restaurant_name)吃[大米饭](cuisine)
-    - [昌平区](address)的[西北菜](cuisine)怎么样，[我俩](person_number)计划[明天中午](date_time)去
-    - 听说[回龙观](address)的[李连贵](restaurant_name)挺好吃的
-
-- intent: inform
-  examples: |
-    - 你知道[全聚德](restaurant_name)在哪里吗
-    - [明天](date_time)
-    - [后天](date_time)
-    - [今天](date_time)
-    - 帮我查一下[今天](date_time)的
-    - [北京](address)
-    - 我想知道[香格里拉酒店](hotel_name)
-    - [如家](hotel_name)在哪里
-    - [10086](phone_number)是移动的客服电话吗
-    - 我的手机号是[13345698854](phone_number)
-
-- intent: inform_business
-  examples: |
-    - [开房信息](business)
-    - [开房信息](business)
-    - [发票信息](business)
-    - [就餐信息](business)
-    - [身份信息](business)
-    - [手机号码](business)
-    - 查[开房信息](business)
-    - 查一查[就餐信息](business)
-    - 提供[发票信息](business)
-    - 查一下[犯罪记录](business)
-    - 看一下[就餐消息](business)
-    - 了解一下[北京饭店](restaurant_name)的[餐饮信息](business)
-    - 想知道[桔子水晶](hotel_name)的[床位信息](business)
-    - 核实一下[身份信息](business)
-
-- synonym: 就餐信息
-  examples: |
-    - 吃饭信息
-    - 吃饭记录
-    - 就餐
-    - 吃饭
-    - 吃饭情况
-    - 就餐情况
-    - 就餐记录
-
+    - 可以开发票吗？
+    - 发票。
+    - 发票信息
 - synonym: 开房信息
   examples: |
     - 住宿信息
@@ -78,7 +38,10 @@ nlu:
     - 住宿记录
     - 房间记录
     - 房间使用情况
-
+- synonym: 总统套件
+  examples: |
+    - 总统套
+    - 总统间
 - synonym: 发票信息
   examples: |
     - 发票

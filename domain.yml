@@ -15,9 +15,8 @@ intents:
 - ask_hotel_service
 - chitchat
 - stop
-- inform
 - whoareyou
-- inform_business
+- ask_business
 - bot_challenge
 - chatchit
 entities:
@@ -25,9 +24,6 @@ entities:
 - phone_number
 - person_number
 - room_type
-- business
-- service
-- lastname
 slots:
   date_time:
     type: unfeaturized
@@ -42,22 +38,6 @@ slots:
     auto_fill: false
     influence_conversation: false
   room_type:
-    type: unfeaturized
-    auto_fill: false
-    influence_conversation: false
-  business:
-    type: unfeaturized
-    auto_fill: false
-    influence_conversation: false
-  service:
-    type: unfeaturized
-    auto_fill: false
-    influence_conversation: false
-  lastname:
-    type: unfeaturized
-    auto_fill: false
-    influence_conversation: false
-  breakfast:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
@@ -93,29 +73,31 @@ responses:
   utter_ask_room_type:
   - text: 请输入房间类型？
   utter_wrong_room_ytpe:
-  - text: 您好，暂不支持{room_type}类型房间，本店支持如下房间类型，请输入你需要的类型，谢谢！
+  - text: 本店支持如下房间类型，请输入你需要的类型，谢谢！
   utter_ask_business:
-  - text: 您想咨询什么业务？
-  utter_wrong_business:
-  - text: 您好，暂不支持{business}业务，谢谢！
+  - text: 本店目前支持开发票、发票邮寄。
   utter_ask_phone_number:
   - text: 请提供您的手机号？
   utter_wrong_phone_number:
   - text: 请输入正确的手机号。
   utter_ask_service:
-  - text: 需要什么服务。
+  - text: 本店提供打扫卫生、叫醒、游泳、健身、按摩服务。
   utter_ok:
   - text: 小主，已经预定完毕。
   utter_bot_challenge:
   - text: 我是机器人小艾，我还是个小学生，我正在学习，小主不要生气啊❤❤❤！
   utter_ask_breakfast:
   - text: 是否需要早餐。
+  utter_ask_continue:
+  - text: 您是否继续预定房间？
   utter_chitchat/fanny:
   - text: 小主，你说的话太有哲理了，我的好好学习啊，要不都没办法跟你聊天了。
   - text: 你好可爱啊，可爱的我都不知道怎么说了呢。
   utter_chitchat/askquestion:
   - text: 哎呀，小艾脑子乱了，你太有哲理了。
   - text: 我不知道啊。
+  utter_continue:
+  - text: 我还能为您做什么？
   utter_submit:
   - text: 太棒了，您的请求正在搜索中。
   utter_solts_values:
@@ -146,8 +128,12 @@ actions:
 - utter_wrong_phone_number
 - utter_ask_service
 - utter_ok
+- utter_continue
 - utter_bot_challenge
 - utter_ask_breakfast
+- utter_ask_continue
+- utter_submit
+- utter_solts_values
 - utter_chitchat/fanny
 - utter_chitchat/askquestion
 forms:

@@ -1,6 +1,6 @@
 version: "2.0"
 stories:
-- story: greet
+- story: happy path
   steps:
   - intent: greet
   - action: utter_answer_greet
@@ -17,5 +17,15 @@ stories:
   - intent: chitchat
   - action: utter_chitchat
   - intent: goodbye
+  - action: utter_answer_goodbye
+- story path: unhappy path
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+  - intent: deny
+  - action: utter_answer_deny
+  - intent: stop
   - action: utter_answer_goodbye
 

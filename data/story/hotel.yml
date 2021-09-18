@@ -1,66 +1,48 @@
 version: "2.0"
 stories:
-- story: happy path + chitchat
+- story: happy path
   steps:
   - intent: greet
   - action: utter_answer_greet
-  - intent: check_hotle
-    entities:
-    - address: 天安门
-    - hotel_name: null
-    - room_type: null
-  - action:  hotel_form
-  - active_loop: hotel_form
-  - slot_was_set:
-    - address: 天安门
-  - slot_was_set:
-    - hotel_name: null
-  - slot_was_set:
-    - room_type: null
-  - slot_was_set:
-    - requested_slot: hotel_name
-  - slot_was_set:
-    - requested_slot: room_type
-  - intent: request_hotel_service
-  - action: utter_request_hotel_service
-  - intent: booking_hotel
-    entities:
-    - hotel_name: 如家
-    - address: null
-    - room_type: null
-    - person_number: null
-    - date_time: null
-    - phone_number: null
+  - intent: ask_hotel_service
+  - action: utter_ask_service
+  - intent: request_hotel
   - action: hotel_form
-  - active_loop: hotel_form
-  - slot_was_set:
-    - hotel_name: 如家
-  - slot_was_set:
-    - address: null
-  - slot_was_set:
-    - room_type: null
-  - slot_was_set:
-    - person_number: null
-  - slot_was_set:
-    - date_time: null
-  - slot_was_set:
-    - phone_number: null
-  - slot_was_set:
-    - requested_slot: address
-  - slot_was_set:
-    - requested_slot: room_type
-  - slot_was_set:
-    - requested_slot: person_number
-  - slot_was_set:
-    - requested_slot: date_time
-  - slot_was_set:
-    - requested_slot: phone_number
+  - action_loop: hotel_form
   - intent: thanks
   - action: utter_answer_thanks
+  - action: utter_continue
   - intent: chitchat
   - action: utter_chitchat
+  - intent: bot_challenge
+  - action: utter_bot_challenge
   - intent: goodbye
   - action: utter_answer_goodbye
+- story: stop form + continue
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: request_hotel
+  - action: hotel_form
+  - action_loop: hotel_form
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: hotel_form
+  - action_loop: null
+  - action: utter_submit
+  - action: utter_solts_values
+- story: stop form + continue
+  steps:
+  - intent: request_hotel
+  - action: hotel_form
+  - action_loop: hotel_form
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: deny
+  - action: action_deactive_loop
+  - action_loop: null
+
 
 
 
