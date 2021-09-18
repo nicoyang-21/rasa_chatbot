@@ -6,7 +6,7 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - request_hotel
-    use_entities: []
+    use_entities:[]
 - affirm
 - deny
 - greet
@@ -137,31 +137,31 @@ actions:
 - utter_chitchat/fanny
 - utter_chitchat/askquestion
 forms:
-  hotel_form:  酒店预定信息收集
+  hotel_form:
     ignored_intents:
     - chitchat
     required_slots:
-      date_time:
-      - type: from_entity
-        entity: date_time
-      room_type:
-      - type: from_entity
-        entity: room_type
-      person_number:
-      - type: from_entity
-        entity: person_number
-        intent: [request_hotel, ask_hotel_service, inform_business]
-      service:
-      - type: from_text
-        not_intent: affirm
-      breakfast:
-      - type: from_intent
-        intent: affirm
-        value: true
-      - type: from_intent
-        intent: deny
-        value: false
-      phone_number:
-      - type: from_entity
-        entity: phone_number
+        date_time:
+          - type: from_entity
+            entity: date_time
+        room_type:
+          - type: from_entity
+            entity: room_type
+        person_number:
+          - type: from_entity
+            entity: person_number
+            intent: [request_hotel, ask_hotel_service, inform_business]
+        service:
+          - type: from_text
+            not_intent: affirm
+        breakfast:
+          - type: from_intent
+            intent: affirm
+            value: true
+          - type: from_intent
+            intent: deny
+            value: false
+        phone_number:
+          - type: from_entity
+            entity: phone_number
 e2e_actions: []

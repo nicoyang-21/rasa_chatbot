@@ -8,7 +8,7 @@ stories:
   - action: utter_ask_service
   - intent: request_hotel
   - action: hotel_form
-  - action_loop: hotel_form
+  - active_loop: hotel_form
   - intent: thanks
   - action: utter_answer_thanks
   - action: utter_continue
@@ -24,24 +24,24 @@ stories:
   - action: utter_answer_greet
   - intent: request_hotel
   - action: hotel_form
-  - action_loop: hotel_form
+  - active_loop: hotel_form
   - intent: stop
   - action: utter_ask_continue
   - intent: affirm
   - action: hotel_form
-  - action_loop: null
+  - active_loop: null
   - action: utter_submit
   - action: utter_solts_values
 - story: stop form + continue
   steps:
   - intent: request_hotel
   - action: hotel_form
-  - action_loop: hotel_form
+  - active_loop: hotel_form
   - intent: stop
   - action: utter_ask_continue
   - intent: deny
   - action: action_deactive_loop
-  - action_loop: null
+  - active_loop: null
 
 
 

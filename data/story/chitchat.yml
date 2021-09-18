@@ -18,7 +18,7 @@ stories:
   - action: utter_chitchat
   - intent: goodbye
   - action: utter_answer_goodbye
-- story path: unhappy path
+- story: unhappy path
   steps:
   - intent: greet
   - action: utter_answer_greet
