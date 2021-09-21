@@ -5,7 +5,7 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- request_hotel
+- request_hotel:
     use_entities:[]
 - affirm
 - deny
@@ -72,8 +72,8 @@ responses:
   - text: 请输入正整数。
   utter_ask_room_type:
   - text: 请输入房间类型？
-  utter_wrong_room_ytpe:
-  - text: 本店支持如下房间类型，请输入你需要的类型，谢谢！
+  utter_wrong_room_type:
+  - text: 本店支持如下房间类型：标准间、大床房、标准双人间、棋牌室、商务套件、豪华商务套件、总统套件，请输入你需要的类型，谢谢！
   utter_ask_business:
   - text: 本店目前支持开发票、发票邮寄。
   utter_ask_phone_number:
@@ -121,9 +121,8 @@ actions:
 - utter_ask_person_number
 - utter_wrong_person_number
 - utter_ask_room_type
-- utter_wrong_room_ytpe
+- utter_wrong_room_type
 - utter_ask_business
-- utter_wrong_business
 - utter_ask_phone_number
 - utter_wrong_phone_number
 - utter_ask_service

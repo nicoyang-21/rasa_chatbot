@@ -40,7 +40,7 @@ stories:
   - intent: stop
   - action: utter_ask_continue
   - intent: deny
-  - action: action_deactive_loop
+  - action: utter_answer_goodbye
   - active_loop: null
 
 
