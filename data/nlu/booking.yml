@@ -6,12 +6,15 @@ nlu:
     - 我想预定[大床房](room_type)。
     - 可以预定房间吗？
     - 有[9月19日](date_time)的[总统套间](room_type)吗？
+    - [10月3日](date_time)去住[麻将房](room_type).
+    - [1月1日](date_time)预定什么样的房间。
     - 开一间[4](person_number)人[麻将房](room_type)。
+    - 预定一间[2]人[标准双人间](room_type)。
     - 定3间[大床房](room_type)。
-    - 还有[双人标间](room_type)吗？
+    - 还有[标准双人间](room_type)吗？
     - [总统套间](room_type)。
     - [大床房](room_type)。
-    - 3间[标间](room_type)
+    - 3间[标准间](room_type)
     - 给[13122331122](phone_number)定间[标准间](room_type)
     - [15312216688](phone_number)在这预定[总统套](room_type)
 - intent: ask_hotel_service

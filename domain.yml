@@ -6,7 +6,11 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - request_hotel:
-    use_entities:[]
+    use_entities:
+      - date_time
+      - phone_number
+      - person_number
+      - room_type
 - affirm
 - deny
 - greet
@@ -105,8 +109,8 @@ responses:
           - 时间：{date_time}\n
           - 人数：{person_number}\n
           - 房间类型：{room_type}\n
-          - 服务：{service}
-          - 早餐：{breakfast}\n
+          - 服务：{text}
+          - 早餐：{value}\n
           - 手机：{phone_number}
 actions:
 - validate_hotel_form
