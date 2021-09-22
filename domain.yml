@@ -71,19 +71,19 @@ responses:
   utter_answer_whoareyou:
   - text: 我是您的助手，小艾。
   utter_ask_datetime:
-  - text: 请输入具体日期？
+  - text: 请输入具体日期：
   utter_ask_person_number:
-  - text: 请输入人数。
+  - text: 请输入人数：
   utter_wrong_person_number:
   - text: 请输入正整数。
   utter_ask_room_type:
-  - text: 请输入房间类型？
+  - text: 请输入房间类型：
   utter_wrong_room_type:
   - text: 本店支持如下房间类型：标准间、大床房、标准双人间、棋牌室、商务套件、豪华商务套件、总统套件，请输入你需要的类型，谢谢！
   utter_ask_business:
   - text: 本店目前支持开发票、发票邮寄。
   utter_ask_phone_number:
-  - text: 请提供您的手机号？
+  - text: 请提供您的手机号：
   utter_wrong_phone_number:
   - text: 请输入正确的手机号。
   utter_ask_service:
@@ -93,7 +93,7 @@ responses:
   utter_bot_challenge:
   - text: 我是机器人小艾，我还是个小学生，我正在学习，小主不要生气啊❤❤❤！
   utter_ask_breakfast:
-  - text: 是否需要早餐。
+  - text: 是否需要早餐？
   utter_ask_continue:
   - text: 您是否继续预定房间？
   utter_chitchat/fanny:

@@ -43,7 +43,7 @@ class Actionhotelform(FormAction):
         ]
 
     @staticmethod
-    def is_int(string: Text) -> bool:
+    def is_int(string) -> bool:
         """Check if a string is an integer."""
 
         try:
@@ -53,10 +53,12 @@ class Actionhotelform(FormAction):
             return False
 
     @staticmethod
-    def is_phone_number(string: Text) -> bool:
+    def is_phone_number(value) -> bool:
         """check phone_number is right"""
-        pattern = re.compile(r'^1[3578]/d{9}$')
-        res = pattern.match(string)
+        pattern = re.compile(r'^1[3578]\d{9}$')
+        res = pattern.match(value)
+        print(value)
+        print(res)
         if res:
             return True
         else:
@@ -102,7 +104,7 @@ class Actionhotelform(FormAction):
                               tracker: Tracker,
                               domain: Dict[Text, Any],
                               ) -> Dict[Text, Any]:
-        if self.is_phone_number(value):
+        if self.is_phone_number(str(value)):
             return {"phone_number": value}
         else:
             dispatcher.utter_message(response="utter_wrong_phone_number")

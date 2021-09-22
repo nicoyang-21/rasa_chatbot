@@ -76,7 +76,7 @@ stories:
   steps:
   - intent: inform
     entities:
-    - cuisine: room_type
+    - room_type: 大床房
   - action: utter_answer_greet
   - intent: request_hotel
   - action: hotel_form
@@ -85,13 +85,19 @@ stories:
     - requested_slot: date_time
   - intent: inform
     entities:
-    - person_number: 3
+    - date_time: 1月1日
   - action: hotel_form
   - slot_was_set:
-    - requested_slot:  breakfast
+    - requested_slot: phone_number
   - intent: inform
     entities:
     - phone_number: 13352864563
+  - action: hotel_form
+  - slot_was_set:
+    - requested_slot: person_number
+  - intent: inform
+    entities:
+    - person_number: 2
 
 
 
