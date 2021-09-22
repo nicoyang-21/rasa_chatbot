@@ -6,8 +6,8 @@ nlu:
     - 我想预定[大床房](room_type)。
     - 可以预定房间吗？
     - 有[9月19日](date_time)的[总统套间](room_type)吗？
-    - [10月3日](date_time)去住[麻将房](room_type).
-    - [1月1日](date_time)预定什么样的房间。
+    - 我[10月3日](date_time)去住[麻将房](room_type).
+    - 请问[1月1日](date_time)预定什么样的房间？
     - 开一间[4](person_number)人[麻将房](room_type)。
     - 预定一间[2](person_number)人[标准双人间](room_type)。
     - 定3间[大床房](room_type)。
