@@ -115,15 +115,15 @@ class Actionhotelform(FormAction):
         return []
 
 
-class ActionResetSlot(Action):
-    def name(self) -> Text:
-        return "action_resetSlot"
-
-    def run(self,
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="执行了重置slot.*reply: action_resetSlot*")
-
-        return [AllSlotsReset()]
+# class ActionResetSlot(Action):
+#     def name(self) -> Text:
+#         return "action_resetSlot"
+#
+#     def run(self,
+#             dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#         dispatcher.utter_message(text="执行了重置slot.*reply: action_resetSlot*")
+#
+#         return [AllSlotsReset()]
 

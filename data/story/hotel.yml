@@ -20,18 +20,18 @@ stories:
   - action: utter_answer_goodbye
 
 
-#- story: stop form + continue
-#  steps:
-#  - intent: greet
-#  - action: utter_answer_greet
-#  - intent: request_hotel
-#  - action: hotel_form
-#  - active_loop: hotel_form
-#  - intent: stop
-#  - action: utter_ask_continue
-#  - intent: affirm
-#  - action: hotel_form
-#  - active_loop: null
+- story: stop form + continue
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: request_hotel
+  - action: hotel_form
+  - active_loop: hotel_form
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: hotel_form
+  - active_loop: null
 
 
 
