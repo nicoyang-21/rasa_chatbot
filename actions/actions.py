@@ -13,11 +13,20 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import re
 
+from rasa_sdk.forms import FormAction
 
-class Actionhotelform(Action):
+
+class Actionhotelform(FormAction):
 
     def name(self) -> Text:
         return "validate_hotel_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        """A list of required slots that the form has to fill"""
+
+        return ["date_time", "phone_number", "person_number",
+                "room_type"]
 
     @staticmethod
     def room_type_db() -> List[Text]:
@@ -98,3 +107,8 @@ class Actionhotelform(Action):
         else:
             dispatcher.utter_message(response="utter_wrong_phone_number")
             return {"phone_number": None}
+
+    def submit(self, tracker: Tracker, dispatcher: CollectingDispatcher):
+        """Define what the form has to do after all required slots are filled"""
+        dispatcher.utter_template('utter_submit', tracker)
+        return []
