@@ -37,7 +37,7 @@ class Actionhotelform(FormAction):
             "大床房",
             "标准双人间",
             "麻将房",
-            "商务套件",
+            "商务套间",
             "豪华商务套件",
             "总统套件",
         ]
@@ -78,7 +78,7 @@ class Actionhotelform(FormAction):
             dispatcher.utter_message(response="utter_wrong_room_type")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
-            return {"cuisine": None}
+            return {"room_type": None}
 
     def validate_person_number(
             self,
@@ -90,7 +90,7 @@ class Actionhotelform(FormAction):
         """Validate num_people value."""
 
         if self.is_int(value) and int(value) > 0:
-            return {"num_people": value}
+            return {"person_number": value}
         else:
             dispatcher.utter_message(response="utter_wrong_person_number")
             # validation failed, set slot to None

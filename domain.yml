@@ -11,6 +11,8 @@ intents:
       - phone_number
       - person_number
       - room_type
+- inform:
+    use_entities: true
 - affirm
 - deny
 - greet
@@ -153,7 +155,7 @@ forms:
         person_number:
           - type: from_entity
             entity: person_number
-            intent: [request_hotel, ask_hotel_service, inform_business]
+            intent: [request_hotel, ask_hotel_service, inform_business, inform]
         service:
           - type: from_text
             not_intent: affirm

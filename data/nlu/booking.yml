@@ -34,6 +34,25 @@ nlu:
     - 可以开发票吗？
     - 发票。
     - 发票信息
+- intent: inform
+  examples: |
+    - [标准间](room_type)
+    - [大床房](room_type)
+    - [标准双人间](room_type)
+    - [麻将房](room_type)
+    - [商务套间](room_type)
+    - [豪华商务套件](room_type)
+    - [总统套件](room_type)
+    - 我计划预定[商务套间](room_type)
+    - 我们住[标准间](room_type)
+    - [2月2日](date_time)入住
+    - [1月1日](date_time)来酒店
+    - [3](person_number)
+    - [23](person_number)人
+    - [1](person_number)个人住
+    - 我的手机号码是[13198334277](phone_number)
+    - [13398334277](phone_number)
+    - [15542864569](phone_number)
 - synonym: 开房信息
   examples: |
     - 住宿信息
