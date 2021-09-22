@@ -31,3 +31,4 @@ rules:
   - active_loop: null
   - action: utter_submit
   - action: utter_solts_values
+  - action: action_resetSlot

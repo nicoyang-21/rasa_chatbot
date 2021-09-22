@@ -47,6 +47,14 @@ slots:
     type: unfeaturized
     auto_fill: false
     influence_conversation: false
+  service:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
+  breakfast:
+    type: unfeaturized
+    auto_fill: false
+    influence_conversation: false
 responses:
   utter_answer_affirm:
   - text: 嗯嗯，好的！
@@ -71,7 +79,7 @@ responses:
   utter_answer_whoareyou:
   - text: 我是您的助手，小艾。
   utter_ask_datetime:
-  - text: 请输入具体日期：
+  - text: 请输入入住日期：
   utter_ask_person_number:
   - text: 请输入人数：
   utter_wrong_person_number:
@@ -80,21 +88,23 @@ responses:
   - text: 请输入房间类型：
   utter_wrong_room_type:
   - text: 本店支持如下房间类型：标准间、大床房、标准双人间、棋牌室、商务套件、豪华商务套件、总统套件，请输入你需要的类型，谢谢！
-  utter_ask_business:
+  utter_ask_whatbusiness:
   - text: 本店目前支持开发票、发票邮寄。
   utter_ask_phone_number:
   - text: 请提供您的手机号：
   utter_wrong_phone_number:
   - text: 请输入正确的手机号。
-  utter_ask_service:
+  utter_answer_service:
   - text: 本店提供打扫卫生、叫醒、游泳、健身、按摩服务。
+  utter_ask_service:
+  - text: 需要什么服务？
   utter_ok:
   - text: 小主，已经预定完毕。
   utter_bot_challenge:
   - text: 我是机器人小艾，我还是个小学生，我正在学习，小主不要生气啊❤❤❤！
   utter_ask_breakfast:
   - text: 是否需要早餐？
-  utter_ask_continue:
+  utter_ask_whether_continue:
   - text: 您是否继续预定房间？
   utter_chitchat/fanny:
   - text: 小主，你说的话太有哲理了，我的好好学习啊，要不都没办法跟你聊天了。
@@ -116,6 +126,7 @@ responses:
           - 手机：{phone_number}
 actions:
 - validate_hotel_form
+- action_resetSlot
 - utter_answer_affirm
 - utter_answer_deny
 - utter_answer_greet
@@ -128,15 +139,16 @@ actions:
 - utter_wrong_person_number
 - utter_ask_room_type
 - utter_wrong_room_type
-- utter_ask_business
+- utter_ask_whatbusiness
 - utter_ask_phone_number
 - utter_wrong_phone_number
 - utter_ask_service
+- utter_answer_service
 - utter_ok
 - utter_continue
 - utter_bot_challenge
 - utter_ask_breakfast
-- utter_ask_continue
+- utter_ask_whether_continue
 - utter_submit
 - utter_solts_values
 - utter_chitchat/fanny

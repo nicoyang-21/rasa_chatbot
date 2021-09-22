@@ -10,6 +10,7 @@
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
+from rasa_sdk.events import AllSlotsReset
 from rasa_sdk.executor import CollectingDispatcher
 import re
 
@@ -57,8 +58,6 @@ class Actionhotelform(FormAction):
         """check phone_number is right"""
         pattern = re.compile(r'^1[3578]\d{9}$')
         res = pattern.match(value)
-        print(value)
-        print(res)
         if res:
             return True
         else:
@@ -114,3 +113,17 @@ class Actionhotelform(FormAction):
         """Define what the form has to do after all required slots are filled"""
         dispatcher.utter_template('utter_submit', tracker)
         return []
+
+
+class ActionResetSlot(Action):
+    def name(self) -> Text:
+        return "action_resetSlot"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="执行了重置slot.*reply: action_resetSlot*")
+
+        return [AllSlotsReset()]
+
