@@ -28,10 +28,9 @@ stories:
   - action: hotel_form
   - active_loop: hotel_form
   - intent: stop
-  - action: utter_ask_continue
+  - action: utter_ask_whether_continue
   - intent: affirm
   - action: hotel_form
-  - active_loop: null
 
 
 
