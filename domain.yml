@@ -5,14 +5,8 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- request_hotel:
-    use_entities:
-      - date_time
-      - phone_number
-      - person_number
-      - room_type
-- inform:
-    use_entities: true
+- request_hotel
+- inform
 - affirm
 - deny
 - greet
@@ -78,8 +72,10 @@ responses:
   - text: 你还有什么问题？
   utter_answer_whoareyou:
   - text: 我是您的助手，小艾。
-  utter_ask_datetime:
+  utter_ask_date_time:
   - text: 请输入入住日期：
+  utter_wrong_date_time:
+  - text: 请重新输入入住日期：
   utter_ask_person_number:
   - text: 请输入人数：
   utter_wrong_person_number:
@@ -134,7 +130,7 @@ actions:
 - utter_answer_thanks
 - utter_answer_stop
 - utter_answer_whoareyou
-- utter_ask_datetime
+- utter_ask_date_time
 - utter_ask_person_number
 - utter_wrong_person_number
 - utter_ask_room_type

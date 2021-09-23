@@ -27,7 +27,7 @@ class Actionhotelform(FormAction):
         """A list of required slots that the form has to fill"""
 
         return ["date_time", "phone_number", "person_number",
-                "room_type"]
+                "room_type", "service", "breakfast"]
 
     @staticmethod
     def room_type_db() -> List[Text]:
@@ -109,11 +109,22 @@ class Actionhotelform(FormAction):
             dispatcher.utter_message(response="utter_wrong_phone_number")
             return {"phone_number": None}
 
+    # def validate_date_time(self,
+    #                        value: Text,
+    #                        dispatcher: CollectingDispatcher,
+    #                        tracker: Tracker,
+    #                        domain: Dict[Text, Any],
+    #                        ) -> Dict[Text, Any]:
+    #     if value is not None:
+    #         return {"date_time": value}
+    #     else:
+    #         dispatcher.utter_message(response="utter_wrong_date_time")
+    #         return {"date_time": None}
+
     def submit(self, tracker: Tracker, dispatcher: CollectingDispatcher):
         """Define what the form has to do after all required slots are filled"""
         dispatcher.utter_template('utter_submit', tracker)
         return []
-
 
 # class ActionResetSlot(Action):
 #     def name(self) -> Text:
@@ -126,4 +137,3 @@ class Actionhotelform(FormAction):
 #         dispatcher.utter_message(text="执行了重置slot.*reply: action_resetSlot*")
 #
 #         return [AllSlotsReset()]
-

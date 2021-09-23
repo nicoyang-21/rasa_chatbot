@@ -3,15 +3,15 @@ version: "2.0"
 nlu:
 - intent: request_hotel
   examples: |
-    - 我想预定[大床房](room_type)。
-    - 可以预定房间吗？
-    - 有[9月19日](date_time)的[总统套间](room_type)吗？
-    - 我[10月3日](date_time)去住[麻将房](room_type).
-    - 请问[1月1日](date_time)预定什么样的房间？
-    - 开一间[4](person_number)人[麻将房](room_type)。
+    - 我[今天](date_time)想预定[大床房](room_type)。
+    - [明天](date_time)可以预定房间吗？
+    - [后天](date_time)有的[总统套间](room_type)吗？
+    - 我去住[麻将房](room_type).
+    - 请问预定什么样的房间？
+    - [后天](date_time)开一间[4](person_number)人[麻将房](room_type)。
     - 预定一间[2](person_number)人[标准双人间](room_type)。
-    - 定3间[大床房](room_type)。
-    - 还有[标准双人间](room_type)吗？
+    - [明天](date_time)定3间[大床房](room_type)。
+    - [今天](date_time)还有[标准双人间](room_type)吗？
     - [总统套间](room_type)。
     - [大床房](room_type)。
     - 3间[标准间](room_type)
@@ -45,8 +45,6 @@ nlu:
     - [总统套件](room_type)
     - 我计划预定[商务套间](room_type)
     - 我们住[标准间](room_type)
-    - [2月2日](date_time)入住
-    - [1月1日](date_time)来酒店
     - [3](person_number)
     - [23](person_number)人
     - [1](person_number)个人住
