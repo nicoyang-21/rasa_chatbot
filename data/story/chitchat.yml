@@ -18,6 +18,8 @@ stories:
   - action: utter_chitchat
   - intent: goodbye
   - action: utter_answer_goodbye
+
+
 - story: unhappy path
   steps:
   - intent: greet

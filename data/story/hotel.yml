@@ -31,19 +31,40 @@ stories:
   - action: utter_ask_whether_continue
   - intent: affirm
   - action: hotel_form
+  - active_loop: hotel_form
 
 
 
-#- story: stop form + continue
-#  steps:
-#  - intent: request_hotel
-#  - action: hotel_form
-#  - active_loop: hotel_form
-#  - intent: stop
-#  - action: utter_ask_continue
-#  - intent: deny
-#  - action: utter_answer_goodbye
-#  - active_loop: null
+
+
+- story: stop form + continue
+  steps:
+  - intent: request_hotel
+  - action: hotel_form
+  - active_loop: hotel_form
+  - intent: stop
+  - action: utter_ask_whether_continue
+  - intent: deny
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_solts_values
+
+
+- story: stop form + continue
+  steps:
+  - intent: request_hotel
+  - action: hotel_form
+  - active_loop: hotel_form
+  - intent: ask_hotel_service
+  - action: utter_answer_service
+  - action: utter_ask_whether_continue
+  - intent: deny
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_solts_values
+
+
+
 
 - story: Story from rasa X
   steps:

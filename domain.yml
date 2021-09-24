@@ -6,7 +6,6 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - request_hotel
-- inform
 - affirm
 - deny
 - greet
@@ -59,8 +58,7 @@ responses:
   - text: 怎么了，主人？
   utter_answer_greet:
   - text: 您好，很高兴遇见您！
-  - text: 祝您生活愉快！
-  - text: 非常高兴能够帮到您！
+  - text: 您好，我能帮您做些什么？
   utter_answer_goodbye:
   - text: 再见！
   - text: 期待与您再会！
