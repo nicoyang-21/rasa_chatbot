@@ -144,3 +144,6 @@ Werkzeug==2.0.1
 wincertstore==0.2
 wrapt==1.12.1
 yarl==1.6.3
+
+torch~=1.9.1+cu102
+transformers~=4.11.3
