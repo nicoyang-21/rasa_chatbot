@@ -17,7 +17,7 @@ class SentimentAnalyzer(Component):
     provides = ["entities"]
     requires = []
     defaults = {}
-    language_list = ["en"]
+    language_list = ["zh"]
 
     def __init__(self, component_config: Optional[Dict[Text, Any]] = None) -> None:
         super().__init__(component_config)

@@ -91,32 +91,30 @@ stories:
   - action: utter_answer_deny
 
 
-- story: Story from github
-  steps:
-  - intent: inform
-    entities:
-    - room_type: 大床房
-  - action: utter_answer_greet
-  - intent: request_hotel
-  - action: hotel_form
-  - active_loop: hotel_form
-  - slot_was_set:
-    - requested_slot: date_time
-  - intent: inform
-    entities:
-    - date_time: 1月1日
-  - action: hotel_form
-  - slot_was_set:
-    - requested_slot: phone_number
-  - intent: inform
-    entities:
-    - phone_number: 13352864563
-  - action: hotel_form
-  - slot_was_set:
-    - requested_slot: person_number
-  - intent: inform
-    entities:
-    - person_number: 2
+#- story: Story from github
+#  steps:
+#  - intent: request_hotel
+#    entities:
+#    - room_type: 大床房
+#  - action: hotel_form
+#  - active_loop: hotel_form
+#  - slot_was_set:
+#    - requested_slot: date_time
+#  - intent: inform
+#    entities:
+#    - date_time: 1月1日
+#  - action: hotel_form
+#  - slot_was_set:
+#    - requested_slot: phone_number
+#  - intent: inform
+#    entities:
+#    - phone_number: 13352864563
+#  - action: hotel_form
+#  - slot_was_set:
+#    - requested_slot: person_number
+#  - intent: inform
+#    entities:
+#    - person_number: 2
 
 
 

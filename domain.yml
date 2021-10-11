@@ -18,6 +18,7 @@ intents:
 - ask_business
 - bot_challenge
 - chatchit
+- inform
 entities:
 - date_time
 - phone_number
