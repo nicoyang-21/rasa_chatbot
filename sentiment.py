@@ -31,7 +31,8 @@ class SentimentAnalyzer(Component):
         """训练阶段代码"""
         print('训练已经完成，基于bert的预训练语言模型进行fine_tune')
 
-    def convert_to_rasa(self, value, confidence):
+    @staticmethod
+    def convert_to_rasa(value, confidence):
         """把模型的输出转化为 rasa 能够识别的输出."""
 
         entity = {"value": value,
