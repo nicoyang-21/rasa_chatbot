@@ -44,7 +44,6 @@ class SentimentAnalyzer(Component):
 
     def process(self, message: Message, **kwargs: Any) -> None:
         """使用分类器来处理文本，并且转化为 rasa 能够接受的格式"""
-        print(message.as_dict_nlu()['text'])
         output = sentiment(message.as_dict_nlu()['text'])
         print('##################### 情感识别 ###########################')
         value, confidence = output['intent'], output['confidence']
