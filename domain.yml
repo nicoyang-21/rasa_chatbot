@@ -5,20 +5,34 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- request_hotel
-- affirm
-- deny
-- greet
-- goodbye
-- thanks
-- ask_hotel_service
-- chitchat
-- stop
-- whoareyou
-- ask_business
-- bot_challenge
-- chatchit
-- inform
+- request_hotel:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- thanks:
+    use_entities: true
+- ask_hotel_service:
+    use_entities: true
+- chitchat:
+    use_entities: true
+- stop:
+    use_entities: true
+- whoareyou:
+    use_entities: true
+- ask_business:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- chatchit:
+    use_entities: true
+- inform:
+    use_entities: true
 entities:
 - date_time
 - phone_number
@@ -26,27 +40,33 @@ entities:
 - room_type
 slots:
   date_time:
-    type: unfeaturized
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
     auto_fill: false
     influence_conversation: false
   phone_number:
-    type: unfeaturized
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
     auto_fill: false
     influence_conversation: false
   person_number:
-    type: unfeaturized
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
     auto_fill: false
     influence_conversation: false
   room_type:
-    type: unfeaturized
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
     auto_fill: false
     influence_conversation: false
   service:
-    type: unfeaturized
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
     auto_fill: false
     influence_conversation: false
   breakfast:
-    type: unfeaturized
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
     auto_fill: false
     influence_conversation: false
 responses:
@@ -112,13 +132,7 @@ responses:
   utter_submit:
   - text: 太棒了，您的请求正在搜索中。
   utter_solts_values:
-  - text: 正在使用如下信息搜索您需要的房间：\n
-          - 时间：{date_time}\n
-          - 人数：{person_number}\n
-          - 房间类型：{room_type}\n
-          - 服务：{text}
-          - 早餐：{value}\n
-          - 手机：{phone_number}
+  - text: 正在使用如下信息搜索您需要的房间：\n - 时间：{date_time}\n - 人数：{person_number}\n - 房间类型：{room_type}\n - 服务：{text} - 早餐：{value}\n - 手机：{phone_number}
 actions:
 - validate_hotel_form
 - action_resetSlot
@@ -153,27 +167,31 @@ forms:
     ignored_intents:
     - chitchat
     required_slots:
-        date_time:
-          - type: from_entity
-            entity: date_time
-        room_type:
-          - type: from_entity
-            entity: room_type
-        person_number:
-          - type: from_entity
-            entity: person_number
-            intent: [request_hotel, ask_hotel_service, inform_business, inform]
-        service:
-          - type: from_text
-            not_intent: affirm
-        breakfast:
-          - type: from_intent
-            intent: affirm
-            value: true
-          - type: from_intent
-            intent: deny
-            value: false
-        phone_number:
-          - type: from_entity
-            entity: phone_number
+      breakfast:
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      date_time:
+      - entity: date_time
+        type: from_entity
+      person_number:
+      - entity: person_number
+        intent:
+        - request_hotel
+        - ask_hotel_service
+        - inform_business
+        - inform
+        type: from_entity
+      phone_number:
+      - entity: phone_number
+        type: from_entity
+      room_type:
+      - entity: room_type
+        type: from_entity
+      service:
+      - not_intent: affirm
+        type: from_text
 e2e_actions: []

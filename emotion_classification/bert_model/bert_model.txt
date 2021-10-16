@@ -1,0 +1,1 @@
+bert: huggingface bert-base-chinese

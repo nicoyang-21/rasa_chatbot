@@ -1,0 +1,5 @@
+数据下载：https://github.com/SophonPlus/ChineseNlpCorpus/blob/master/datasets/weibo_senti_100k/intro.ipynb
+最长句子：260
+句子平均长度：66
+75%的句子长度<97
+本次训练中pad_size=102
